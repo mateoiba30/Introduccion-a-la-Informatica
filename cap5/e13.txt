@@ -1,0 +1,43 @@
+programa c5e13
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    p:numero
+    f:numero
+    g:numero
+    terminar:boolean
+  comenzar
+    p:=0
+    f:=0
+    g:=0
+    terminar:=F
+    Pos(1,4)
+    derecha
+    mientras(PosAv<100)&(terminar=F)
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p:=p+1
+      mientras(HayPapelEnLaBolsa)
+        depositarPapel
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        f:=f+1
+      mientras(HayFlorEnLaBolsa)
+        depositarFlor
+      g:=2*p
+      si(g=f)
+        terminar:=V
+      sino
+        mover
+        p:=0
+        f:=0
+        g:=0
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

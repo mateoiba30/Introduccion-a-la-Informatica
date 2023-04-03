@@ -1,0 +1,63 @@
+programa tarea3corregida
+procesos
+  proceso lado_corto
+  comenzar
+    repetir 3
+      mover
+  fin
+  proceso lado_largo
+  comenzar
+    repetir 5
+      mover
+  fin
+  proceso rectangulo
+  comenzar
+    repetir 2
+      lado_corto
+      derecha
+      lado_largo
+      derecha
+  fin
+  proceso posicionarse
+  comenzar
+    si(PosCa<50)
+      Pos(5,5)
+    sino
+      Pos(10,10)
+  fin
+  proceso recorrer_avenida
+  variables
+    x:numero
+    p:numero
+  comenzar
+    x:=0
+    mientras (PosCa<100)&((HayPapelEnLaEsquina)|(HayFlorEnLaEsquina))
+      p:=0
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p:=p+1
+      si(p>3)
+        x:=x+1
+      mover
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      p:=p+1 
+    si(p>3)
+      x:=x+1    
+    Informar(x)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    recorrer_avenida
+    posicionarse
+    rectangulo
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

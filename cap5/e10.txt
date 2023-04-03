@@ -1,0 +1,35 @@
+programa c5e10
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    pasos:numero
+    terminar:boolean
+  comenzar
+    pasos:=0
+    terminar:=F
+    mientras (PosAv<100)&(terminar=F)
+      mientras (PosCa<100)&(terminar=F)
+        mientras (PosCa<100)&((HayPapelEnLaEsquina)|(HayFlorEnLaEsquina))
+          mover
+          pasos:=pasos+1
+        si ~(HayPapelEnLaEsquina)&~(HayFlorEnLaEsquina)
+          terminar:=V
+        sino
+          Pos(PosAv+1,1)
+    repetir 99
+      mientras (PosCa<100)&((HayPapelEnLaEsquina)|(HayFlorEnLaEsquina))
+        mover
+        pasos:=pasos+1
+      si ~(HayPapelEnLaEsquina)&~(HayFlorEnLaEsquina)
+        terminar:=V
+    Informar(pasos)   
+    Informar(terminar)     
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

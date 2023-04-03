@@ -1,0 +1,62 @@
+programa c7e9
+procesos
+  proceso vaciar_bolsa
+  comenzar
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+    mientras(HayPapelEnLaBolsa)
+      depositarPapel
+  fin
+  proceso avenida
+  variables
+    p:numero
+    f:numero
+    x:numero
+    t:boolean
+  comenzar
+    t:=F
+    x:=0
+    mientras(PosCa<100)&(t=F)
+      f:=0
+      p:=0
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        f:=f+1
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p:=p+1
+      vaciar_bolsa
+      x:=p+f
+      si(x<>15)
+        mover
+      sino 
+        t:=V
+    si(f>p)
+      Informar(V)
+    sino
+      Informar(F)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    c:numero
+  comenzar
+    c:=0
+    repetir 99
+      avenida
+      si(PosCa<50)
+        c:=c+1
+      Pos(PosAv+1,1)
+    avenida
+    si(PosCa<50)
+      c:=c+1
+    Informar(c)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

@@ -1,0 +1,22 @@
+programa c6e7
+procesos
+  proceso limpiar
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    limpiar
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

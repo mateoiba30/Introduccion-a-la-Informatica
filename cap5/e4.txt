@@ -1,0 +1,30 @@
+programa c5e4
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    soloP:numero
+    soloF:numero
+  comenzar
+    Pos(1,10)
+    derecha
+    repetir 99
+      si ((HayPapelEnLaEsquina)&(~HayFlorEnLaEsquina))
+        soloP:=soloP+1
+      si ((~HayPapelEnLaEsquina)&(HayFlorEnLaEsquina))
+        soloF:=soloF+1
+      mover
+    si ((HayPapelEnLaEsquina)&(~HayFlorEnLaEsquina))
+      soloP:=soloP+1
+    si ((~HayPapelEnLaEsquina)&(HayFlorEnLaEsquina))
+      soloF:=soloF+1
+    Informar(soloP)
+    Informar(soloF)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

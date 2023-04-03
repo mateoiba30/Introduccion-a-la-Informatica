@@ -1,0 +1,20 @@
+programa ej7bc3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    mientras((PosCa<50)&(PosAv<50))
+    mover
+    derecha
+    mover
+    repetir 3
+      derecha
+      
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

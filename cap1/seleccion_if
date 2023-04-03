@@ -1,0 +1,23 @@
+programa Cap2Ejemplo3
+areas
+ciudad: AreaC(1,1,100,100)
+robots
+robot robot1
+comenzar
+derecha
+si HayFlorEnLaBolsa {Evalúa la primera esquina}
+depositarFlor
+sino
+Informar(PosAv)
+mover
+si HayFlorEnLaBolsa {Evalúa la segunda esquina}
+depositarFlor
+sino
+Informar(PosAv)
+fin
+variables
+Rinfo: robot1
+comenzar
+AsignarArea(Rinfo,ciudad)
+Iniciar(Rinfo,1,1)
+fin

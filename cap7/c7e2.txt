@@ -1,0 +1,68 @@
+programa c7e2
+procesos
+  proceso informar_papeles
+  variables
+    p:numero
+  comenzar
+    p:=0
+    mientras(HayPapelEnLaBolsa)
+      depositarPapel
+      p:=p+1
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+    Informar(p)
+  fin
+  proceso informar_flores
+  variables
+    f:numero
+  comenzar
+    f:=0
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+      f:=f+1
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+    Informar(f)
+  fin
+  proceso recolectar
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+    mover
+  fin
+  proceso rectangulo
+  variables
+    x:numero
+  comenzar
+    x:=0
+    repetir 2
+      recolectar
+      si~((HayFlorEnLaEsquina)|(HayPapelEnLaEsquina))
+        x:=x+1
+      derecha
+      repetir 15
+        recolectar
+      si~((HayFlorEnLaEsquina)|(HayPapelEnLaEsquina))
+        x:=x+1
+      derecha
+    Informar(x)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 6
+      rectangulo
+      Pos(1,PosCa+2)
+    informar_papeles
+    informar_flores
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

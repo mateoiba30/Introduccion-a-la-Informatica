@@ -1,0 +1,43 @@
+programa c6e8
+procesos
+  proceso limpiar_calle
+  comenzar
+    repetir 99
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+      mover
+    mientras(HayPapelEnLaEsquina)
+      tomarFlor    
+  fin
+  proceso limpiar_avenida
+  comenzar
+    repetir 99
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+      mover
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    limpiar_avenida
+    Pos(1,1)   
+    derecha
+    limpiar_calle
+    Pos(2,1)
+    repetir 3
+      derecha
+    limpiar_avenida
+    Pos(1,2)
+    derecha
+    limpiar_calle
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

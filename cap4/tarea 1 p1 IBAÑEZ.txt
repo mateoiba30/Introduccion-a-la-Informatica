@@ -1,0 +1,56 @@
+programa opcion5-2
+areas 
+  ciudad:AreaC(1,1,100,100) 
+robots 
+  robot robot1 
+  variables 
+    PE:numero 
+    PC:numero 
+  comenzar 
+    Pos(1,2) 
+    derecha 
+    repetir 49 
+      PC:=0  
+      mientras (PosAv<100) & (((HayPapelEnLaEsquina)&(HayFlorEnLaEsquina)) | (~(HayFlorEnLaEsquina)&~(HayPapelEnLaEsquina))) 
+        PE:=0 
+        mientras(HayPapelEnLaEsquina) & (PE<4) 
+     	  tomarPapel 
+     	  PE:=PE+1 
+    	si (PE=3) 
+     	  PC:=PC+1 
+     	mover 
+        
+      mientras (HayPapelEnLaEsquina) & (PE<4)
+        tomarPapel 
+     	PE:=PE+1 
+      si (PE=3) 
+        PC:=PC+1     
+       
+      Informar(PC) 
+      si (PosCa<99)
+      	Pos(1,PosCa+2)
+         
+      mientras (PosAv<100) & ((HayPapelEnLaEsquina)&(HayFlorEnLaEsquina)) | (~(HayFlorEnLaEsquina)&~(HayPapelEnLaEsquina)) 
+        PE:=0 
+        mientras(HayPapelEnLaEsquina) & (PE<4)
+          tomarPapel 
+          PE:=PE+1 
+        si (PE=3) 
+          PC:=PC+1 
+        mover 
+
+      mientras (HayPapelEnLaEsquina) & (PE<4)
+     	tomarPapel 
+     	PE:=PE+1 
+      si (PE=3) 
+        PC:=PC+1 
+         
+      Informar(PC) 
+
+  fin 
+variables 
+  Rinfo:robot1 
+comenzar 
+  AsignarArea(Rinfo,ciudad) 
+  Iniciar(Rinfo,1,1) 
+fin 

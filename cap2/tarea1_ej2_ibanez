@@ -1,0 +1,23 @@
+programa tarea1_ej2_ibanez {asigno lo que todo programa lleva}
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 3 {asigno la cantidad de rectángulos a dibujar}
+      repetir 2 {repito 2 veces las instrucciones para dibujar un lado de 4 cuadras y otro de 5}
+        repetir 4 {sibujamos un lado de 4 cuadras}
+          mover
+        derecha {nos orientamos para dibujar el siguiente lado}
+        repetir 5 {dibujamos un lado de 5 cuadras}
+          mover
+        derecha {nos orientamos para dibujar el siguiente lado}
+      Pos(PosAv+6, PosCa+1) {una vez finalizada una figura nos posicionamos para dibujar otra}
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+

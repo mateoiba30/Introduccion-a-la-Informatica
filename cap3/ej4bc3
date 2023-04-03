@@ -1,0 +1,30 @@
+programa ej4bc3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    flores:numero
+  comenzar
+    Pos(1,44)
+    derecha
+    repetir 99
+      mientras(HayFlorEnLaEsquina)
+        flores:=flores+1
+        tomarFlor
+      mientras(HayFlorEnLaBolsa)
+        depositarFlor
+      mover
+    mientras(HayFlorEnLaEsquina)
+      flores:=flores+1
+      tomarFlor
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+    Informar(flores)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

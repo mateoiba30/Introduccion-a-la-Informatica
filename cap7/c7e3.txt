@@ -1,0 +1,67 @@
+programa c7e3
+procesos
+  proceso recorrer_calle
+  variables
+    ftotales:numero
+    e:numero
+    f:numero
+  comenzar
+    derecha
+    e:=0
+    ftotales:=0
+    repetir 99
+      f:=0
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        ftotales:=ftotales+1
+        f:=f+1
+      si(f<3)&~(HayPapelEnLaEsquina)
+        e:=e+1
+      mover
+    f:=0
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      ftotales:=ftotales+1
+      f:=f+1
+    si(f<3)&~(HayPapelEnLaEsquina)
+      e:=e+1
+    Informar(ftotales)
+    Informar(e)
+  fin
+  proceso recorrer_avenida
+  variables
+    terminar:boolean
+    p:numero
+    x:numero
+  comenzar
+    repetir 3
+      derecha
+    mientras(terminar=F)&(PosCa<100)
+      p:=0
+      si~(HayFlorEnLaEsquina)
+        mientras(HayPapelEnLaEsquina)
+          tomarPapel
+          p:=p+1
+        x:=PosCa+3
+        si(p=x)
+          terminar:=V
+      si(terminar=F)
+        mover
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir  10
+      recorrer_calle
+      Pos(PosCa,1)
+      recorrer_avenida
+      Pos(1,PosAv+1)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

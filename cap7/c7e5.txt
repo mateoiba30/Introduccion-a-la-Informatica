@@ -1,0 +1,64 @@
+programa c7e5
+procesos
+  proceso dejar_papeles
+  comenzar
+    mientras(HayPapelEnLaBolsa)
+      depositarPapel
+  fin
+  proceso dejar_flores
+  comenzar
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+  fin
+  proceso avenida_impar
+  variables
+    p:numero
+    f:numero
+  comenzar
+    f:=0
+    p:=0
+    mientras~((f=3)|(p=15))
+      f:=0
+      p:=0
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        f:=f+1
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p:=p+1
+      dejar_flores
+      dejar_papeles
+      si~((f=3)|(p=15))
+        mover
+  fin
+  proceso avenida_par
+  variables
+    pasos:numero
+  comenzar
+    pasos:=0
+    mientras((HayFlorEnLaEsquina)|(HayPapelEnLaEsquina))&(PosCa<100)
+      mover
+      pasos:=pasos+1
+    si~((HayFlorEnLaEsquina)|(HayPapelEnLaEsquina))
+      Informar(pasos)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 49
+      avenida_impar
+      Pos(PosAv+1,1)
+      avenida_par
+      Pos(PosAv+1,1)
+    avenida_impar
+    Pos(PosAv+1,1)
+    avenida_par
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

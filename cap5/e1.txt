@@ -1,0 +1,38 @@
+programa c5e1
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    c:numero
+  comenzar
+    c:=0
+    Pos(1,50)
+    derecha
+    repetir 99
+      si (~HayPapelEnLaEsquina) & (~HayFlorEnLaEsquina)
+        c:=c+1
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      mover
+
+    si (~HayPapelEnLaEsquina) & (~HayFlorEnLaEsquina)
+      c:=c+1
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+
+    Informar(c) 
+
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+
+

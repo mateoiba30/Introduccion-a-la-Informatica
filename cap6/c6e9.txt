@@ -1,0 +1,30 @@
+programa c6e9
+procesos
+  proceso recorrer_avenida
+  variables
+    f:numero
+  comenzar
+    f:=0
+    mientras (PosCa<100) & (f<3)
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        f:=f+1
+      mover
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    Pos(2,1)
+    repetir 49
+      recorrer_avenida
+      Pos(PosAv+2,1)
+    recorrer_avenida
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

@@ -1,0 +1,29 @@
+programa ej17c3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    papeles:numero
+    flores:numero
+  comenzar
+    papeles:=0
+    flores:=0
+    Pos(1,2)
+    mientras ~((papeles=10)&(flores=4)) & (PosAv<100)
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        papeles:=papeles+1
+        
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        flores:=flores+1
+        
+      mover
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

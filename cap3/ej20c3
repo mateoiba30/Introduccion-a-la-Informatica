@@ -1,0 +1,25 @@
+programa ej20c3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    papeles:numero
+  comenzar
+    repetir 4
+      papeles:=0
+      repetir 99
+        mientras(HayPapelEnLaEsquina)
+          tomarPapel
+          papeles:=papeles+1
+        mover
+      Informar(papeles)
+      derecha
+
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

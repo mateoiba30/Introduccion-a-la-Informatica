@@ -1,0 +1,66 @@
+programa c5e8
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    f:numero
+    p:numero
+  comenzar
+    p:=0
+    f:=0
+    repetir 99
+      repetir 99
+        si(HayPapelEnLaEsquina)
+          mientras(HayPapelEnLaEsquina)
+            tomarPapel
+            p:=p+1
+          depositarPapel
+        si(HayFlorEnLaEsquina)   
+          mientras(HayFlorEnLaEsquina)
+            tomarFlor
+            f:=f+1
+          depositarFlor
+        mover
+      si(HayPapelEnLaEsquina)  
+        mientras(HayPapelEnLaEsquina)
+          tomarPapel
+          p:=p+1
+        depositarPapel
+      si(HayFlorEnLaEsquina)  
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          f:=f+1
+        depositarFlor
+      Pos(PosAv+1,1)
+    repetir 99
+      si(HayPapelEnLaEsquina)  
+        mientras(HayPapelEnLaEsquina)
+          tomarPapel
+          p:=p+1
+        depositarPapel 
+      si(HayFlorEnLaEsquina)     
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          f:=f+1
+        depositarFlor
+      mover
+    si(HayPapelEnLaEsquina)  
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p:=p+1
+      depositarPapel
+    si(HayFlorEnLaEsquina)      
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        f:=f+1
+      depositarFlor
+    Informar(f)
+    Informar(p)       
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

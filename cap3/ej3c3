@@ -1,0 +1,22 @@
+programa ej3c3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    p:numero 
+  comenzar
+    Pos(12,12)
+    mientras(HayPapelEnLaEsquina)
+      p:=p+1
+      tomarPapel
+    mientras(HayPapelEnLaBolsa)
+      depositarPapel
+    Informar(p)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

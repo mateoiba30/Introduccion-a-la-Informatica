@@ -1,0 +1,26 @@
+programa c6e2b
+procesos
+  proceso cuadrado
+  comenzar
+    repetir 4
+      mover
+      mover
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 2
+      cuadrado
+      Pos(1, PosCa+3)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+
+

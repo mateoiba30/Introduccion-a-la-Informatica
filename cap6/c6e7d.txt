@@ -1,0 +1,36 @@
+programa c6e7d
+procesos
+  proceso limpiar
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+  fin
+  proceso rectangulo
+  comenzar
+    repetir 2
+      repetir 3
+        mover
+        limpiar
+      derecha
+      repetir 5
+        mover
+        limpiar
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 3
+      rectangulo
+      Pos(PosAv+1, PosCa+1)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

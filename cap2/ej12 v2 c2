@@ -1,0 +1,101 @@
+programa nombre
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar 
+  {}{}{}{}{}{}{}{}
+    repetir 99
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      mover
+    
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor   
+    derecha
+    mover
+    derecha
+    {}{}{}{}{}{}{}
+    repetir 99
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      mover
+      
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor   
+    derecha
+    derecha
+    derecha
+    mover
+    derecha
+    derecha
+    derecha
+{}{}{}{}{}{}{}{}
+
+    repetir 99
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      mover
+    
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor   
+    derecha
+    mover
+    derecha
+    {}{}}{}{}{}{}{{}{}{}
+    repetir 99
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      mover
+      
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor   
+    derecha
+    derecha
+    derecha
+    mover
+    derecha
+    derecha
+    derecha
+    {}{}{}{}{}{}{}{}{}
+
+    repetir 99
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      mover
+    
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor   
+    derecha
+    mover
+    derecha
+
+
+       
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

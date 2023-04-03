@@ -1,0 +1,59 @@
+programa c7e6
+procesos
+  proceso limpiar
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+  fin
+  proceso avenida_impar
+  variables
+    pasos:numero
+  comenzar
+    pasos:=0
+    mientras(HayFlorEnLaEsquina)|(HayPapelEnLaEsquina)
+      limpiar
+      mover
+      pasos:=pasos+1
+    Informar(pasos)
+  fin
+  proceso avenida_par
+  variables
+    f:numero
+    e:numero
+  comenzar
+    repetir 99
+      mientras(HayFlorEnLaEsquina)&(f<3)
+        tomarFlor
+        f:=f+1
+      si(f=1)
+        e:=e+1
+      mover
+    mientras(HayFlorEnLaEsquina)&(f<3)
+      tomarFlor
+      f:=f+1
+    si(f=1)&~(HayPapelEnLaEsquina)
+      e:=e+1
+    Informar(e)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 49
+      avenida_impar
+      Pos(PosAv+1,1)
+      avenida_par
+      Pos(PosAv+1,1)
+    avenida_impar
+    Pos(PosAv+1,1)
+    avenida_par
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

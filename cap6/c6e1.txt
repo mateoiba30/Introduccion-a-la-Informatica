@@ -1,0 +1,21 @@
+programa c6e1
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    c:numero
+  comenzar
+    repetir 4
+      mover
+      mover
+      derecha
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+
+

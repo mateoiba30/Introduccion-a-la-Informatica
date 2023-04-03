@@ -1,0 +1,46 @@
+programa tarea3
+procesos
+  proceso rectangulo
+  comenzar
+    repetir 2
+      repetir 3
+        mover
+      derecha
+      repetir 5
+        mover
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    p:numero
+    x:numero
+  comenzar
+    mientras (PosCa<100)&((HayPapelEnLaEsquina)|(HayFlorEnLaEsquina))
+      p:=0
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p:=p+1
+      si(p>3)
+        x:=x+1
+      mover
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      p:=p+1 
+    si(p>3)
+      x:=x+1    
+    Informar(x)
+    si(PosCa<50)
+      Pos(5,5)
+    sino
+      Pos(10,10)
+    rectangulo
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

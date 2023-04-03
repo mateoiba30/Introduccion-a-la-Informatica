@@ -1,0 +1,36 @@
+programa ej15c3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    p_e:numero
+    con6:numero
+  comenzar
+    con6:=0
+    Pos(1,34)
+    derecha
+    
+    repetir 99
+      p_e:=0
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p_e:=pe+1
+      si(p_e=6)
+        con6:=con6+1
+        
+      mover
+      
+    p_e:=0
+    mientra(HayPapelEnLaEsquina)
+      tomarpapel
+      p_e:=p_e+1
+    si(p_e=6)
+      con6:=con6+1
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

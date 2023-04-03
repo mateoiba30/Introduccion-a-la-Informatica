@@ -1,0 +1,39 @@
+programa msj1
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    PE:numero{contador de papeles por la esquina}
+    PC:numero{contador de calles con esquinas con 3 papeles}
+  comenzar
+    Pos(1,2){se posiciona en la primer calle par}
+    derecha {se posiciona para recorrer las calles}
+    repetir 50 {hay 50 calles pares}
+      PC:=0{nueva calle, el contador se reinicia}
+      mientras (PosAv<100) &( ((HayPapelEnLaEsquina)&(HayFlorEnLaEsquina)) | ((HayPapelEnLaEsquina)&(HayFlorEnLaEsquina)) ){si no hay solo papel o solo flor, y mientras la calle no se acabe}
+        PE:=0{nueva esquina, el contador se reinicia}
+        mientras(HayPapelEnLaEsquina)
+          tomarPapel
+          PE:=PE+1 {cuento los papeles por esquina} 
+        si (PE=3)
+          PC:=PC+1 {si hay 3 papeles el contador incrementa}
+        mover {avanza a la siguiente esquina}
+      
+      mientras(HayPapelEnLaEsquina){analizo la ultima esquina, porque finalicé moviéndome en la calle}    
+        tomarPapel
+        PE:=PE+1
+      si(PE=3)
+        PC:=PC+1    
+        
+      Informar(PC){digo la cantidad de esquinas con 3 papels de la calle}
+      si (PosCa<99){si no me salgo de la ciudad, avanzo a la siguiente calle par}
+        Pos(1,PosCa+2)
+      
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

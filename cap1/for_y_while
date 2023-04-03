@@ -1,0 +1,7 @@
+{for:repetición 
+{repetir N
+{  acción
+{
+{while:iteración:
+{mientras (condición)
+{  acción

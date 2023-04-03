@@ -1,0 +1,59 @@
+programa c7e4
+procesos
+  proceso recorrer_calle
+  variables
+    p:numero
+    f:numero
+    e:numero
+    x:numero
+    y:numero
+  comenzar
+    e:=0
+    x:=0
+    repetir 99
+      p:=0
+      f:=0
+      y:=0
+      si(HayFlorEnLaEsquina)&(HayPapelEnLaEsquina)
+        y:=1
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        p:=p+1
+      mientras(HayFlorEnLaEsquina)
+        tomarFlor
+        f:=f+1
+      x:=p+p
+      si(y=1)&(f=x)
+        e:=e+1
+      mover
+    p:=0
+    f:=0
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      p:=p+1
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      f:=f+1
+    x:=p+p
+    si(y=1)&(f=x)
+      e:=e+1
+    Informar(e)
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    derecha
+    Pos(1,91)
+    repetir 9
+      recorrer_calle
+      Pos(1,PosCa+1)
+    recorrer_calle
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

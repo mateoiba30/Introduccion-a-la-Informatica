@@ -1,0 +1,32 @@
+programa c5e3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    c:numero
+    terminar:boolean
+  comenzar
+    Pos(1,3)
+    derecha
+    c:=0
+    terminar:=F
+    mientras (PosAv<100)&(terminar=F)
+      si (HayPapelEnLaBolsa)
+        depositarPapel
+        c:=c+1
+        mover
+      sino
+        Informar(c)
+        terminar:=V
+    si(HayPapelEnLaBolsa)&(terminar=F)
+      depositarPapel
+      c:=c+1
+      Informar(c)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

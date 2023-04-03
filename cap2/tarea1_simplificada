@@ -1,0 +1,20 @@
+programa tarea1_ej1_ibanez_corregido {asigno lo que todo programa necesita}
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    derecha{oriento al robot para recorrer las calles}
+    Pos(1,2) {posiciono al robot en la primer calle par}
+    repetir 49 {me muevo mientras no se cumpla lo que busco}
+      mientras(PosAv<100)&(((HayFlorEnLaEsquina)&~(HayFlorEnLaEsquina))|(~(HayFlorEnLaEsquina)&(HayFlorEnLaEsquina))
+        mover
+           
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+

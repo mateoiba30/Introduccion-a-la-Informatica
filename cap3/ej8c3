@@ -1,0 +1,27 @@
+programa ej9c3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    e_v:numero
+  comenzar
+    e_v:=0
+    repetir 50
+      si ~((HayFlorEnLaEsquina)|(HayPapelEnLaEsquina))
+        e_v:=e_v+1
+      mover
+      derecha
+      si ~((HayFlorEnLaEsquina)|(HayPapelEnLaEsquina))
+        e_v:=ev+1
+      mover
+      repetir 3
+        derecha
+    Informar(e_v)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

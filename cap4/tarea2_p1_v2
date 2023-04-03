@@ -1,0 +1,46 @@
+programa tarea2_p1_v2
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    PE:numero{contador de papeles por la esquina}
+    PC:numero{contador de calles con esquinas con 3 papeles}
+    x:boolean
+  comenzar
+    Pos(1,100){se posiciona en la primer calle par}
+    derecha {se posiciona para recorrer las calles}
+    mientras(PosCa<=100)
+      PC:=0{nueva calle, el contador se reinicia}    
+      x:=F
+      mientras (PosAv<100) ~(((HayPapelEnLaEsquina)&~(HayFlorEnLaEsquina)) | ((HayFlorEnLaEsquina)&~(HayPapelEnLaEsquina))){si no se cumple lo que busco me muevo}
+        PE:=0{nueva esquina, el contador se reinicia}
+        mientras(HayPapelEnLaEsquina)
+          tomarPapel
+          PE:=PE+1 {cuento los papeles por esquina} 
+        si (PE=3)
+          PC:=PC+1 {si hay 3 papeles el contador incrementa}
+        si (PosAv<100)
+          mover {avanza a la siguiente esquina simepre y cuando no me salga de la ciudad}
+      
+      si ((HayFlorEnLaEsquina)&~(HayPapelEnLaEsquina)) | ((HayPapelEnLaEsquina)&~(HayFlorEnLaEsquina))
+        x:=V
+      mientras(HayPapelEnLaEsquina){analizo la ultima esquina, porque finalicÃ© moviÃ©ndome en la calle}    
+        tomarPapel
+        PE:=PE+1
+      si (PE=3)
+        PC:=PC+1    
+      
+      Informar(PC){digo la cantidad de esquinas con 3 papels de la calle}
+      si (PosCa<99)&(x=V){avanzo si es que no  me voy a pasar de la ciudad y si salÃ­ del mientras porque encontrÃ© lo que buscaba}
+        Pos(1,PosCa+2)
+        
+      {solo sale del mietras si se cumple lo buscado, entonces si finaliza la calle y no lo encuentra el robot no sigue}
+
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

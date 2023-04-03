@@ -1,0 +1,27 @@
+programa c6e4b
+procesos
+  proceso rectangulo
+  comenzar
+    repetir 2
+      repetir 3
+        mover
+      derecha
+      repetir 5
+        mover
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 3
+      rectangulo
+      Pos(PosAv+1, PosCa+1)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

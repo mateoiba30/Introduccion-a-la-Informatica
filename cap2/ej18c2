@@ -1,0 +1,31 @@
+programa ej17c2
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    mientras (PosAv<11)   
+      si (HayFlorEnLaEsquina)
+        si (HayPapelEnLaEsquina)
+          mover
+        sino
+          derecha
+          derecha
+          mientras (PosCa>1)
+            mover
+          repetir 3
+            derecha
+          mover
+          repetir 3
+            derecha
+      sino 
+        mover
+      si (PosCa=100)
+        PosAv(10)
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

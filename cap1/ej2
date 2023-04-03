@@ -1,0 +1,17 @@
+programa mover2cuadras
+areas
+  ciudad:AreaC(1,1,100,100){tamaño de la ciudad}
+robots
+  robot robot1{usamos 1 tipo de robot}
+  comenzar
+    Pos(50,28)
+    si HayPapelEnLaEsquina
+      tomarPapel
+  fin
+variables
+  Rinfo:robot1{hay que declarar una variable robot llamada Rinfo}
+comenzar
+  AsignarArea(Rinfo,ciudad){Rinfo solo se puede mover por la ciudad}
+  Iniciar(Rinfo,1,1){se indica donde empieza Rinfo}
+fin
+

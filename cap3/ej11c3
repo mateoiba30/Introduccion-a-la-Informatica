@@ -1,0 +1,21 @@
+programa ej11c3
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    flores:numero
+  comenzar
+    Pos(1,7)
+    mientras (flores<20)
+      si(HayFlorEnLaEsquina)
+        tomarFlor
+        flores:=flores+1
+      mover
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

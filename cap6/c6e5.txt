@@ -1,0 +1,46 @@
+programa c6e5
+procesos
+  proceso recolectar
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+  fin
+  proceso depositar
+  comenzar
+    mientras(HayPapelEnLaBolsa)
+      depositarPapel
+  fin
+  proceso rectangulo
+  comenzar
+    repetir 2
+      repetir 3
+        mover
+        recolectar        
+      derecha
+      depositar
+      repetir 5
+        mover
+        recolectar
+      derecha
+      depositar
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    repetir 2
+      rectangulo
+      Pos(PosAv+6, PosCa+5)
+      derecha
+      rectangulo
+      Pos(PosAv+4, 1)
+      repetir 3
+        derecha
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin

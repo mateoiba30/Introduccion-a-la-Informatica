@@ -1,0 +1,46 @@
+programa ej14c2
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  
+  comenzar
+    derecha
+    repetir 50
+      repetir 99
+        mientras (HayFlorEnLaEsquina)
+          tomarFlor
+        mientras (HayPapelEnLaEsquina)
+          tomarPapel
+        mover
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      repetir 3
+        derecha
+      mover
+      repetir 3
+        derecha
+      
+      repetir 99
+        mientras (HayPapelEnLaEsquina)
+          tomarPapel
+        mientras (HayFlorEnLaEsquina)
+          tomarFlor
+        mover
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel
+      mientras (HayFlorEnLaEsquina)
+        tomarFlor
+      derecha
+      mover
+      derecha
+  fin
+variables
+  Rinfo:robot1
+comenzar
+  AsignarArea(Rinfo,ciudad)
+  Iniciar(Rinfo,1,1)
+fin
+
