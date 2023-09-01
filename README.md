@@ -10,8 +10,3 @@ Este repositorio contiene las prácticas realizadas en la materia **Introduccion
 - [capitulo 5](cap5/)
 - [capitulo 6](cap6/)
 - [capitulo 7](cap7/)
-
-
-## Licencia
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
