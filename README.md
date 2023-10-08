@@ -1,12 +1,12 @@
 # IaI
 
-Este repositorio contiene las prácticas realizadas en la materia **Introduccion a la Informatica**.
+This repository contains the practices carried out in the subject **Introduction to Informatics**.
 
-## Prácticas
-- [capitulo 1](cap1/)
-- [capitulo 2](cap2/)
-- [capitulo 3](cap3/)
-- [capitulo 4](cap4/)
-- [capitulo 5](cap5/)
-- [capitulo 6](cap6/)
-- [capitulo 7](cap7/)
+## Practices
+- [chapter 1](cap1/)
+- [chapter 2](cap2/)
+- [chapter 3](cap3/)
+- [chapter 4](cap4/)
+- [chapter 5](cap5/)
+- [chapter 6](cap6/)
+- [chapter 7](cap7/)
